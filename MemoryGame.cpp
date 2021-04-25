@@ -30,9 +30,14 @@ MemoryGame::MemoryGame() //default constructor,
     //TODO: your code here
     numPairs = 3;
     numSpaces = (2 * numPairs) + 2;
+    string *gen = new string;
     for(int i =0; i < numPairs; i++){
-        cout << i << endl;
+        int num = rand() % 1000 + 1;
+        (*gen) += to_string(num);
+        (*gen) += ",";
     }
+    values = gen;
+    //cout << *gen << endl;
 
 }
 
@@ -111,5 +116,24 @@ void MemoryGame::display(bool* bShown)
 //(3) Finish until every pair are chosen correctly.
 void MemoryGame::play()
 {   
-
+    string *nums = new string[3];
+    int numIndex = 0;
+    string val = (*values);
+    cout << val << val.length() << endl;
+    for(int i = 0; numIndex < 3; i++){
+        if(val[i] == ','){
+            cout << "fire" << i << endl;
+            numIndex++;
+        }else{
+            nums[numIndex] += val[i];
+        }
+        //cout << nums[numIndex] << endl;
+        //cout << i << endl;
+    }
+    //cout << "test" << endl;
+    for(int i = 0; i < 3; i++){
+        cout << nums[i] << " ";
+    }
+    cout << endl;
+    //cout << (*values) << endl;
 }
