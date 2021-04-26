@@ -136,7 +136,7 @@ void MemoryGame::play()
         int b = rand() % 7;
         swap(nums, a, b);
     }
-    for(i = 0; i < 8; i++){
+    for(int i = 0; i < 8; i++){
         cout << nums[i] << ", " << endl;
     }
 }
