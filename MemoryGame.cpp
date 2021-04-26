@@ -116,7 +116,7 @@ void MemoryGame::display(bool* bShown)
 //(3) Finish until every pair are chosen correctly.
 void MemoryGame::play()
 {   
-    string *nums = new string[3];
+    string *nums = new string[8];
     int numIndex = 0;
     string val = (*values);
     cout << val << val.length() << endl;
@@ -126,14 +126,17 @@ void MemoryGame::play()
             numIndex++;
         }else{
             nums[numIndex] += val[i];
+            nums[numIndex + 4] += val[i];
         }
-        //cout << nums[numIndex] << endl;
-        //cout << i << endl;
     }
-    //cout << "test" << endl;
-    for(int i = 0; i < 3; i++){
-        cout << nums[i] << " ";
+    nums[3] = "";
+    nums[7] = "";
+    for(int i = 0; i < 20; i++){
+        int a = rand() % 7;
+        int b = rand() % 7;
+        swap(nums, a, b);
     }
-    cout << endl;
-    //cout << (*values) << endl;
+    for(i = 0; i < 8; i++){
+        cout << nums[i] << ", " << endl;
+    }
 }
