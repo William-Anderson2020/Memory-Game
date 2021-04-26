@@ -148,6 +148,15 @@ void MemoryGame::play()
         }
         cout << endl;
         displaySeparateLine(8);
+        cout << "|";
+        for(int i = 0; i < 8; i++){
+            cout << setw(5);
+            if(bShown[i] == false){
+                cout << nums[i] << "|";
+            }else{
+                cout << "     |";
+            }
+        }
         complete = true;
     }
 }
