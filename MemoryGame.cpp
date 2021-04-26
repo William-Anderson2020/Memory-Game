@@ -17,14 +17,14 @@ MemoryGame::MemoryGame() //default constructor,
     //Note that 2 added after 2 * numPairs means number of 
     //two extra blocks without actual data.
 {
-    srand(time(NULL)); //TODO: uncomment this line to see
+    //srand(time(NULL)); //TODO: uncomment this line to see
         //different layouts of numbers in different runnings.
         //time(NULL) is the current running time.
         //use the current running time to grow random sequence
         //Since running time differs,
         //the random sequence looks different
         //at different running time.
-    //srand(1); //TODO: add this before submitting to gradescope,
+    srand(1); //TODO: add this before submitting to gradescope,
         //or autograde script cannot handle random input.
 
     //TODO: your code here
