@@ -142,7 +142,9 @@ void MemoryGame::play()
     };
     bool complete = false;
     int turns = 0;
+    int flippedCells = 0;
     while(complete == false){
+        turns++;
         for(int i = 0; i < 8; i++){
             cout << "   " << i << "  ";
         }
@@ -160,7 +162,16 @@ void MemoryGame::play()
         cout << endl;
         displaySeparateLine(8);
         int guess;
+        cout << "Pick a cell to flip: ";
         cin >> guess;
-        cout << guess << endl;
+        while(guess > 8 || guess < 0){
+            cout << "index needs to be in range of [0, 7].\nRe-enter an index: ";
+            cin >> guess;
+        };
+        while(bShown[guess] == true){
+            cout << "The cell indexed at " << guess << "is shown.\nRe-enter an index: ";
+            cin >> guess;
+        }
+        bShown[guess] = true;
     }
 }
