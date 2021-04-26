@@ -79,7 +79,7 @@ int* randomize(int size)
 //swap arr[i] and arr[j] in array of ints arr.
 void swap(string *arr, int i, int j)
 {
-    int holding = arr[i];
+    string holding = arr[i];
     arr[i] = arr [j];
     arr[j] = arr[i];
 }
