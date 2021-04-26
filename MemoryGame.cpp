@@ -143,6 +143,8 @@ void MemoryGame::play()
     bool complete = false;
     int turns = 0;
     int flippedCells = 0;
+    int flips[2];
+    int correctPairs = 0;
     while(complete == false){
         turns++;
         for(int i = 0; i < 8; i++){
@@ -170,10 +172,25 @@ void MemoryGame::play()
                 cin >> guess;
             };
             while(bShown[guess] == true){
-                cout << "The cell indexed at " << guess << "is shown.\nRe-enter an index: ";
+                cout << "The cell indexed at " << guess << " is shown.\nRe-enter an index: ";
                 cin >> guess;
             };
         }
         bShown[guess] = true;
+        flips[flippedCells] = guess;
+        flippedCells++;
+        if(flippedCells == 2){
+            flippedCells = 0;
+            if(nums[flips[0]] != nums[flips[1]]){
+                bShown[flips[0]] = false;
+                bShown[flips[1]] = false;
+            }else{
+                correctPairs++;
+            }
+            if(correctPairs == 3){
+                cout << "Congratualtions! Take " << turns << " steps to find all matched pairs.";
+                complete = true;
+            }
+        }
     }
 }
