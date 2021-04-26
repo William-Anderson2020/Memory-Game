@@ -144,7 +144,7 @@ void MemoryGame::play()
     int turns = 0;
     while(complete == false){
         for(int i = 0; i < 8; i++){
-            cout << "   " << i << "   ";
+            cout << "   " << i << "  ";
         }
         cout << endl;
         displaySeparateLine(8);
