@@ -174,6 +174,7 @@ void MemoryGame::play()
             if(correctPairs == 3){
                 cout << "Congratualtions! Take " << turns << " steps to find all matched pairs." << endl;
                 complete = true;
+                continue;
             }
         }
         int guess;
