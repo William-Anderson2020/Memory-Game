@@ -80,7 +80,7 @@ int* randomize(int size)
 void swap(string *arr, int i, int j)
 {
     string holding = arr[i];
-    arr[i] = arr [j];
+    arr[i] = arr[j];
     arr[j] = arr[i];
 }
 
