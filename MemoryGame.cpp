@@ -159,6 +159,8 @@ void MemoryGame::play()
         }
         cout << endl;
         displaySeparateLine(8);
-        complete = true;
+        int guess;
+        cin >> guess;
+        cout << guess << endl;
     }
 }
