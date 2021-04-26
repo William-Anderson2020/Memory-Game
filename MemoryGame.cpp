@@ -77,7 +77,7 @@ int* randomize(int size)
 //int* arr means int array arr, which implies the address
 //of the first element of array arr.
 //swap arr[i] and arr[j] in array of ints arr.
-void swap(int *arr, int i, int j)
+void swap(string *arr, int i, int j)
 {
     int holding = arr[i];
     arr[i] = arr [j];
