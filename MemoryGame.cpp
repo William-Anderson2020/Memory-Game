@@ -163,6 +163,19 @@ void MemoryGame::play()
         }
         cout << endl;
         displaySeparateLine(8);
+        if(flippedCells == 2){
+            flippedCells = 0;
+            if(nums[flips[0]] != nums[flips[1]]){
+                bShown[flips[0]] = false;
+                bShown[flips[1]] = false;
+            }else{
+                correctPairs++;
+            }
+            if(correctPairs == 3){
+                cout << "Congratualtions! Take " << turns << " steps to find all matched pairs." << endl;
+                complete = true;
+            }
+        }
         int guess;
         cout << "Pick a cell to flip: ";
         cin >> guess;
@@ -179,18 +192,5 @@ void MemoryGame::play()
         bShown[guess] = true;
         flips[flippedCells] = guess;
         flippedCells++;
-        if(flippedCells == 2){
-            flippedCells = 0;
-            if(nums[flips[0]] != nums[flips[1]]){
-                bShown[flips[0]] = false;
-                bShown[flips[1]] = false;
-            }else{
-                correctPairs++;
-            }
-            if(correctPairs == 3){
-                cout << "Congratualtions! Take " << turns << " steps to find all matched pairs.";
-                complete = true;
-            }
-        }
     }
 }
