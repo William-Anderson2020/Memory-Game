@@ -151,12 +151,14 @@ void MemoryGame::play()
         cout << "|";
         for(int i = 0; i < 8; i++){
             cout << setw(5);
-            if(bShown[i] == false){
+            if(bShown[i] == true){
                 cout << nums[i] << "|";
             }else{
                 cout << "     |";
             }
         }
+        cout << endl;
+        displaySeparateLine(8);
         complete = true;
     }
 }
