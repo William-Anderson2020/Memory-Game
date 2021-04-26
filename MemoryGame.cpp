@@ -136,7 +136,18 @@ void MemoryGame::play()
         int b = rand() % 7;
         swap(nums, a, b);
     }
+    bool *bShown = new bool[8];
     for(int i = 0; i < 8; i++){
-        cout << nums[i] << ", " << endl;
+        bShown[i] = false;
+    };
+    bool complete = false;
+    int turns = 0;
+    while(complete == false){
+        for(int i = 0; i < 8; i++){
+            cout << "  " << i << "  ";
+        }
+        cout << endl;
+        displaySeparateLine(8);
+        complete = true;
     }
 }
