@@ -164,13 +164,15 @@ void MemoryGame::play()
         int guess;
         cout << "Pick a cell to flip: ";
         cin >> guess;
-        while(guess > 8 || guess < 0){
-            cout << "index needs to be in range of [0, 7].\nRe-enter an index: ";
-            cin >> guess;
-        };
-        while(bShown[guess] == true){
-            cout << "The cell indexed at " << guess << "is shown.\nRe-enter an index: ";
-            cin >> guess;
+        while(guess > 8 || guess < 0 || bShown[guess] == true){
+            while(guess > 8 || guess < 0){
+                cout << "index needs to be in range of [0, 7].\nRe-enter an index: ";
+                cin >> guess;
+            };
+            while(bShown[guess] == true){
+                cout << "The cell indexed at " << guess << "is shown.\nRe-enter an index: ";
+                cin >> guess;
+            };
         }
         bShown[guess] = true;
     }
